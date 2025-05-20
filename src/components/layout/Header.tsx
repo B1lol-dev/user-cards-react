@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../helpers/Container";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search, UserCircle2Icon } from "lucide-react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
+
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    navigate(`/search/${search}`);
   };
 
   return (
@@ -19,7 +23,11 @@ const Header = () => {
           </Link>
 
           <form className="flex" onSubmit={handleSearch}>
-            <Input placeholder="Search..." />
+            <Input
+              placeholder="Search..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
             <Button>
               <Search />
             </Button>
