@@ -3,7 +3,7 @@ import { API_ENDPOINTS, API_URL } from "@/constants/api";
 import type { IUser } from "@/types/api";
 import axios, { AxiosError } from "axios";
 import React, { useEffect, useState } from "react";
-import { UserCard } from "./UserCard";
+import { UserCard } from "../../../components/common/cards/UserCard";
 import { Loader } from "@/components/ui/loader";
 
 const Users = () => {
@@ -33,7 +33,7 @@ const Users = () => {
 
   if (loading) {
     return (
-      <div className="fixed top-0 left-0 h-screen w-screen flex items-center justify-center">
+      <div className="fixed top-0 left-0 h-screen w-screen flex items-center justify-center bg-white">
         <Loader className="scale-200" />
       </div>
     );
