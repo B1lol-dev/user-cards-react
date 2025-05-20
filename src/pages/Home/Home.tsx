@@ -1,7 +1,12 @@
 import React from "react";
+import Users from "./components/Users";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Users />
+    </>
+  );
 };
 
 export default React.memo(Home);

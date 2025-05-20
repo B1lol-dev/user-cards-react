@@ -9,6 +9,7 @@ import {
 import Home from "./pages/Home/Home";
 import NotFound from "./pages/NotFound/NotFound";
 import Layout from "./components/layout/Layout";
+import Search from "./pages/Search/Search";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/home" element={<Navigate to="/" />} />
+            <Route path="/search/:name" element={<Search />} />
           </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
