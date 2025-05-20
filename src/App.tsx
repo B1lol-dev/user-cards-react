@@ -20,8 +20,8 @@ function App() {
             <Route index element={<Home />} />
             <Route path="/home" element={<Navigate to="/" />} />
             <Route path="/search/:name" element={<Search />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
-          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </>
